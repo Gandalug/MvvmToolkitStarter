@@ -1,0 +1,10 @@
+<Window x:Class="MvvmToolkitStarter.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="400">
+    <StackPanel Margin="10">
+        <Button Content="Seite 1" Command="{Binding GoToPage1Command}" Margin="0,0,0,5"/>
+        <Button Content="Seite 2" Command="{Binding GoToPage2Command}" Margin="0,0,0,10"/>
+        <ContentControl x:Name="ContentHost" />
+    </StackPanel>
+</Window>
