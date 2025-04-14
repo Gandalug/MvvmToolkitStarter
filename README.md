@@ -1,43 +1,67 @@
-# MvvmToolkitStarter
-====================
+# MVVM Toolkit Starter
 
-Dieses Projekt zeigt ein sauberes MVVM-Setup für WPF-Anwendungen mit dem CommunityToolkit.Mvvm.
+Dieses Projekt demonstriert ein modernes MVVM-Setup für WPF-Anwendungen unter Verwendung von [CommunityToolkit.Mvvm](https://learn.microsoft.com/en-us/windows/communitytoolkit/mvvm/).  
+Es richtet sich an Entwickler:innen, die strukturierte, testbare und erweiterbare Desktop-Anwendungen mit .NET erstellen möchten.
 
-Ziel ist es, eine erweiterbare und wartbare Architektur für moderne .NET-Desktopanwendungen zu schaffen, mit Fokus auf:
+---
 
-- Klare Trennung von View, ViewModel und Model
-- Navigation über ViewModels
-- Dependency Injection
-- Services für testbare Geschäftslogik
+## 🔧 Technologien & Frameworks
 
-VERZEICHNISSTRUKTUR
---------------------
+- [.NET 6+](https://dotnet.microsoft.com/)
+- WPF (Windows Presentation Foundation)
+- [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm)
+- Dependency Injection (`IServiceProvider`)
+- ViewModel-basierte Navigation
 
-/Views           -> WPF Views (XAML)
-/ViewModels      -> ViewModel-Logik (mit ObservableObject, RelayCommand, etc.)
-/Services        -> Interfaces und Implementierungen von Services
+---
 
-App.xaml         -> Application Entry Point
-App.xaml.cs      -> Registrierung von Services & Start-ViewModel
+## 📁 Projektstruktur
+- 📁 Views
+  - 📄 UI-Komponenten (XAML)
+- 📁ViewModels
+  - 📄 Logikschicht (MVVM-Logik)
+- 📁Services
+  - 📄 Abstraktion & Businesslogik
+📄 App.xaml.cs   (Einstiegspunkt & Konfiguration)
+  
+---
 
+## 🧠 MVVM mit CommunityToolkit
 
-MVVM MIT COMMUNITY TOOLKIT
----------------------------
+**MVVM (Model-View-ViewModel)** ist ein Entwurfsmuster, das UI und Geschäftslogik sauber trennt.  
+Dieses Projekt nutzt das Toolkit zur Reduktion von Boilerplate-Code:
 
-Das Projekt nutzt `CommunityToolkit.Mvvm`, um Boilerplate zu reduzieren:
+- `[ObservableProperty]` für automatische `INotifyPropertyChanged`-Implementierung
+- `[RelayCommand]` für einfache Commands ohne eigene Klassen
+- Unterstützung für DI & Navigation durch einfache Muster
 
-- [ObservableProperty] für automatische PropertyChanged-Logik
-- [RelayCommand] für einfache Commands
-- Dependency Injection direkt via App.xaml.cs oder IServiceProvider
-- Messenger-Pattern bei Bedarf leicht integrierbar
+### Vorteile des MVVM-Patterns
 
-ZIELGRUPPE
-----------
+✅ Testbarkeit durch Trennung von Logik und UI  
+✅ Wiederverwendbare Komponenten  
+✅ Gute Wartbarkeit & Erweiterbarkeit  
+✅ Klare Zuständigkeiten (Single Responsibility Principle)
 
-Für Entwickler:innen, die ein leichtgewichtiges, aber professionelles MVVM-Grundgerüst benötigen,
-um damit ihre eigene WPF-App aufzubauen oder zu lernen, wie moderne WPF-Architektur funktioniert.
+---
 
-AUTOR
------
+## 🚀 Einstieg
 
-Gandalug – https://github.com/Gandalug
+1. Repository klonen
+2. Mit Visual Studio öffnen
+3. Build ausführen und starten
+
+> Alle Services und ViewModels sind im `App.xaml.cs` registriert.
+
+---
+
+## 🧪 Beispiel
+
+Im Projekt ist eine einfache Navigation zwischen MainView und SecondaryView enthalten.  
+Navigation erfolgt über das `INavigationService`, das die ViewModels verwaltet.
+
+---
+
+## 🧑‍💻 Autor
+
+**Gandalug** – [github.com/Gandalug](https://github.com/Gandalug)  
+_Made with ❤️ for clean architecture._
